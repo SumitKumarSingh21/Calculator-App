@@ -1,0 +1,114 @@
+/* filepath: /calculator-app/calculator-app/index.css */
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232526 0%, #67686a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Calculator container */
+.calculator {
+  background: #4b4e50;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  padding: 32px 28px 28px 28px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Display */
+#display {
+  background: #23272f;
+  color: #fff;
+  font-size: 2.4rem;
+  border-radius: 10px;
+  padding: 20px 14px;
+  text-align: right;
+  border: none;
+  outline: none;
+  margin-bottom: 8px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 14px;
+}
+
+/* Calculator buttons */
+.buttons button {
+  background: #23272f;
+  color: #eaeaea;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.buttons button:hover {
+  background: #31343b;
+  color: #fff;
+}
+
+/* Operator buttons */
+.buttons button:nth-child(4),
+.buttons button:nth-child(8),
+.buttons button:nth-child(12),
+.buttons button:nth-child(16),
+.buttons button[onclick*="append('%')"],
+.buttons button[onclick*="append('^')"] {
+  background: #ff9500;
+  color: #fff;
+}
+
+.buttons button:nth-child(4):hover,
+.buttons button:nth-child(8):hover,
+.buttons button:nth-child(12):hover,
+.buttons button:nth-child(16):hover,
+.buttons button[onclick*="append('%')"]:hover,
+.buttons button[onclick*="append('^')"]:hover {
+  background: #ffa733;
+}
+
+/* Equal button */
+.buttons .equal {
+  background: #34c759;
+  color: #fff;
+  grid-column: span 1;
+}
+
+.buttons .equal:hover {
+  background: #5be584;
+}
+
+/* Clear and DEL buttons */
+.buttons button[onclick="clearDisplay()"] {
+  background: #ff3b30;
+  color: #fff;
+}
+
+.buttons button[onclick="clearDisplay()"]:hover {
+  background: #ff6f61;
+}
+
+.buttons button[onclick="deletechar()"] {
+  background: #636366;
+  color: #fff;
+}
+
+.buttons button[onclick="deletechar()"]:hover {
+  background: #a1a1a1;
+}
